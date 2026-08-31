@@ -5,6 +5,8 @@ export const SSO_ISSUER = "genius-learning-platform";
 export type SSORole = "student" | "teacher" | "guest";
 
 export type UserContext = {
+  geniusId: string;
+  /** @deprecated Use geniusId for cross-application identity. */
   userId: string;
   email: string | null;
   name: string;
@@ -123,6 +125,7 @@ export async function verifySSOToken(token: string): Promise<UserContext> {
   }
 
   return {
+    geniusId: sso.sub,
     userId: sso.sub,
     email: sso.email ?? null,
     name: sso.name ?? "User",

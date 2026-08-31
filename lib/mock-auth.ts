@@ -8,6 +8,7 @@ export const MOCK_USER_STORAGE_KEY = "engage-mock-user-role";
 
 const MOCK_USERS: Record<MockUserRole, UserContext> = {
   teacher: {
+    geniusId: "test-teacher",
     userId: "test-teacher",
     email: "teacher@example.com",
     name: "Test Teacher",
@@ -18,6 +19,7 @@ const MOCK_USERS: Record<MockUserRole, UserContext> = {
     taskId: "demo-teacher-task",
   },
   student: {
+    geniusId: "test-student",
     userId: "test-student",
     email: "student@example.com",
     name: "Test Student",

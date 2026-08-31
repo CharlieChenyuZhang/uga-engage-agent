@@ -41,6 +41,7 @@ describe("verifySSOToken", () => {
     });
 
     const user = await verifySSOToken(token);
+    expect(user.geniusId).toBe("teacher-123");
     expect(user.userId).toBe("teacher-123");
     expect(user.email).toBe("teacher@example.com");
     expect(user.name).toBe("Dr. Smith");
@@ -61,6 +62,7 @@ describe("verifySSOToken", () => {
     });
 
     const user = await verifySSOToken(token);
+    expect(user.geniusId).toBe("student-456");
     expect(user.userId).toBe("student-456");
     expect(user.role).toBe("student");
   });
