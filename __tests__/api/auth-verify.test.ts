@@ -40,6 +40,7 @@ describe("POST /api/auth/verify", () => {
     expect(res.status).toBe(200);
 
     const data = await res.json();
+    expect(data.user.geniusId).toBe("teacher-123");
     expect(data.user.userId).toBe("teacher-123");
     expect(data.user.role).toBe("teacher");
     expect(data.user.classId).toBe("class-abc");
